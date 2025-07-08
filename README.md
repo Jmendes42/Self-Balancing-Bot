@@ -5,4 +5,11 @@ Participation is very much appreciated! (:<br>
 
 This is a PlatformIO project that targets the esp32 development board currently based on the Arduino Framework <br>
 
+## Goals for this project:
+  - Get familiar and confortable using PID algorithms
+  - Learn how to integrate data from encoders
+  - Explore the ESP32 dual core functionalities
+  - Explore embedded systems architecture
+  - Experiment with the mechanics of a self balancing robot
+
 More updates soon!
