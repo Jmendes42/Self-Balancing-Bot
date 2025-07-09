@@ -3,21 +3,21 @@
 
 void Bluetooth::serialSetup()
 {
-    _SerialCommunicator.begin("esp32");
+    _serialCommunicator.begin("esp32");
     Serial.println("Serial Bluetooth initialized");
 }
 
 bool Bluetooth::serialAvailable()
 {
-    return _SerialCommunicator.available();
+    return _serialCommunicator.available();
 }
 
 String Bluetooth::getString()
 {
-    return _SerialCommunicator.readStringUntil('\n');
+    return _serialCommunicator.readStringUntil('\n');
 }
 
 void Bluetooth::writeString(String const& message)
 {
-    _SerialCommunicator.println(message);
+    _serialCommunicator.println(message);
 }

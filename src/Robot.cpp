@@ -9,9 +9,8 @@ void IRAM_ATTR Robot::imuReadIsr()
 
 volatile bool Robot::imuUpdateFlag = false;
 
-Robot::Robot(Motor::MotorPins const& pinsA, Motor::MotorPins const& pinsB, int sda, int scl)
-    : _motorA(pinsA)
-    , _motorB(pinsB)
+Robot::Robot(MotorsDriver::MotorPins const& pins, int sda, int scl)
+    : _motors(pins)
     , _imu(sda, scl)
     , _pidBalance(0.0, 0.0, 0.0)
 {
@@ -20,8 +19,7 @@ Robot::Robot(Motor::MotorPins const& pinsA, Motor::MotorPins const& pinsB, int s
 void Robot::setUp()
 {
     _bluetooth.serialSetup();
-    _motorA.setUp();
-    _motorB.setUp();
+    _motors.setUp();
     _imu.setUp();
     setTimerIsr();
 }
@@ -65,24 +63,17 @@ void Robot::balance()
 
 void Robot::moveForward(int const velocity)
 {
-    _motorA.setDirection(Motor::Direction::Front);
-    _motorB.setDirection(Motor::Direction::Front);
-    _motorA.move(velocity);
-    _motorB.move(velocity);
+    _motors.moveForward(velocity);
 }
 
 void Robot::moveBackward(int const velocity)
 {
-    _motorA.setDirection(Motor::Direction::Back);
-    _motorB.setDirection(Motor::Direction::Back);
-    _motorA.move(velocity);
-    _motorB.move(velocity);
+    _motors.moveBackward(velocity);
 }
 
 void Robot::stop()
 {
-    _motorA.stop();
-    _motorB.stop();
+    _motors.stop();
 }
 
 void Robot::readFromBluetooth()

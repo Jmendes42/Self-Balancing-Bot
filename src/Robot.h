@@ -3,14 +3,14 @@
 #define __ROBOT_H__
 
 #include "Bluetooth.h"
-#include "Motor.h"
+#include "MotorsDriver.h"
 #include "Mpu6050.h"
 #include "PidCalculator.h"
 
 class Robot
 {
 public:
-    Robot(Motor::MotorPins const& pinsA, Motor::MotorPins const& pinsB, int sda, int scl);
+    Robot(MotorsDriver::MotorPins const& pins, int sda, int scl);
 
     void setUp();
     void run();
@@ -28,8 +28,7 @@ private:
     void setTimerIsr();
 
     Bluetooth _bluetooth;
-    Motor _motorA;
-    Motor _motorB;
+    MotorsDriver _motors;
     Mpu6050 _imu;
     PidCalculator _pidBalance;
 };

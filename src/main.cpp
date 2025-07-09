@@ -19,40 +19,15 @@ int constexpr encoderC = 27;
 int constexpr encoderD = 12;
 
 Robot robot(
-    {in1, in2, enableA, encoderA, encoderB},
-    {in3, in4, enableB, encoderC, encoderD},
+    { in1, in2, in3, in4, enableA, enableB },
     sda, scl
 );
-
-BluetoothSerial SerialBT;
 
 void setup()
 {
     Serial.begin(115200);
     robot.setUp();
 }
-
-// void printValues(float const error, double const proportional, double const integral, double const derivative, double const sum, int const pwm)
-// {
-//     Serial.print("error: ");
-//     Serial.println(error);
-//
-//     Serial.print("proportional: ");
-//     Serial.println(proportional);
-//
-//     Serial.print("integral: ");
-//     Serial.println(integral);
-//
-//     Serial.print("derivative: ");
-//     Serial.println(derivative);
-//
-//     Serial.print("sum: ");
-//     Serial.println(sum);
-//
-//     Serial.print("pwm: ");
-//     Serial.println(pwm);
-//     Serial.println("-------------------------");
-// }
 
 void loop()
 {

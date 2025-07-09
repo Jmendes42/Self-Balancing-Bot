@@ -14,7 +14,7 @@ public:
     void writeString(String const& message);
 
 private:
-    BluetoothSerial _SerialCommunicator;
+    BluetoothSerial _serialCommunicator;
 };
 
 

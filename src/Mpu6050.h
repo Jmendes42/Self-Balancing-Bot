@@ -24,7 +24,7 @@ private:
     double _gyroBias;
     double _accOffset;
 
-    double constexpr _errorOffset = 1.15;
+    double const _errorOffset = 1.15;
 };
 
 
