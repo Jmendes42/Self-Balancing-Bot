@@ -8,6 +8,7 @@ This is a PlatformIO project that targets the esp32 development board currently 
 ## Goals for this project:
   - Get familiar and confortable using PID algorithms
   - Learn how to integrate data from encoders
+  - Sensor fusion
   - Explore the ESP32 dual core functionalities
   - Explore embedded systems architecture
   - Experiment with the mechanics of a self balancing robot
