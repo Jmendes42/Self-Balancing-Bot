@@ -13,6 +13,9 @@ public:
 
     void setup();
 
+    int32_t getPulseCount() const;
+    void resetPulseCount();
+
     static void IRAM_ATTR encoderFeedbackIsr(void* motor);
     void handleEncoder();
 

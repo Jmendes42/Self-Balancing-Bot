@@ -14,6 +14,16 @@ void EncoderFeedback::setup()
     attachInterruptArg(digitalPinToInterrupt(_encoderA), encoderFeedbackIsr, this, RISING);
 }
 
+int32_t EncoderFeedback::getPulseCount() const
+{
+    return _pulseCount;
+}
+
+void EncoderFeedback::resetPulseCount()
+{
+    _pulseCount = 0;
+}
+
 void IRAM_ATTR EncoderFeedback::encoderFeedbackIsr(void* motor)
 {
     auto* instance = static_cast<EncoderFeedback*>(motor);
