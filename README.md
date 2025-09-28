@@ -17,4 +17,4 @@ This is a PlatformIO project that targets the esp32 development board currently 
 
 ## TODO
 - Play with encoders PID
-- Solve drift
+- Fix drift
